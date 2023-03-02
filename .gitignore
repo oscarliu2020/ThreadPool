@@ -1,9 +1,9 @@
-.vscode/
-*.dSYM/
 *
 !*.cpp
 !*.hpp
+!.gitignore
 ThreadPool.cpp
 *test*.cpp
 main.cpp
-!.gitignore
+.vscode/
+*.dSYM/

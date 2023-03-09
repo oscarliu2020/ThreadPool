@@ -6,15 +6,15 @@
 #include <functional>
 #include <future>
 #include <condition_variable>
+#include<queue>
 #include <iostream>
-#include "queue_wrapper.hpp"
 using namespace std;
 
 class ThreadPool
 {
 private:
     vector<thread> workers;
-    Queue<function<void()>> jobs;
+    queue<function<void()>> jobs;
     mutex m;
     condition_variable cv;
     bool stop;

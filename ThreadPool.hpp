@@ -49,8 +49,7 @@ template <class F, class... Args>
 future<invoke_result_t<F,Args...>> ThreadPool::submit(F &&f, Args &&...args)
 {
     using ret_type=invoke_result_t<F,Args...>;
-    auto func = bind(forward<F>(f), forward<Args>(args)...);
-    auto task = make_shared<packaged_task<ret_type()>>(func);
+    auto task = make_shared<packaged_task<ret_type()>>(bind(forward<F>(f), forward<Args>(args)...));
     future<ret_type> fut=task->get_future();
     {
         unique_lock<mutex> lk(m);

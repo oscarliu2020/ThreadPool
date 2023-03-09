@@ -1,3 +1,5 @@
+#ifndef THREADPOOL_HPP
+#define THREADPOOL_HPP
 #include <cstdint>
 #include <mutex>
 #include <thread>
@@ -21,7 +23,7 @@ public:
     ThreadPool(int = 4);
     ~ThreadPool();
     template <class F, class... Args>
-    void submit(F &&f, Args &&...args);
+    future<invoke_result_t<F,Args...>> submit(F &&f, Args &&...args);
     void shutdown();
 };
 
@@ -44,20 +46,24 @@ ThreadPool::ThreadPool(int max_workers) : stop(false)
     }
 }
 template <class F, class... Args>
-void ThreadPool::submit(F &&f, Args &&...args)
+future<invoke_result_t<F,Args...>> ThreadPool::submit(F &&f, Args &&...args)
 {
+    using ret_type=invoke_result_t<F,Args...>;
     auto func = bind(forward<F>(f), forward<Args>(args)...);
+    auto task = make_shared<packaged_task<ret_type()>>(func);
+    future<ret_type> fut=task->get_future();
     {
         unique_lock<mutex> lk(m);
         if (stop)
         {
             cout << "ThreadPool has stopped.\n";
         }
-        jobs.push([=]()
-                  { func(); });
+        jobs.push([task]()
+                  { (*task)(); });
     }
 
     cv.notify_one();
+    return fut;
 }
 void ThreadPool::shutdown()
 {
@@ -77,3 +83,4 @@ ThreadPool::~ThreadPool()
     if (!stop)
         shutdown();
 }
+#endif

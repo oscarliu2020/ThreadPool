@@ -7,3 +7,5 @@ ThreadPool.cpp
 main.cpp
 .vscode/
 *.dSYM/
+!*.csv
+!benchmark*.cpp

@@ -28,7 +28,7 @@ void thread_io(benchmark::State& state){
   for(auto _:state){
     ThreadPool pool(state.range(0));
     for(int i=0;i<(int)1e3;i++){
-      pool.submit(f,i);
+      pool.submit(g);
     }
   }
   state.SetComplexityN(state.range(0));

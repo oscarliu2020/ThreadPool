@@ -13,7 +13,7 @@ void f(int x){
 }
 //IO Bound
 void g(){
-  this_thread::sleep_for(3s);
+  this_thread::sleep_for(1s);
 }
 void thread_cpu(benchmark::State& state){
   for(auto _:state){
@@ -27,7 +27,7 @@ void thread_cpu(benchmark::State& state){
 void thread_io(benchmark::State& state){
   for(auto _:state){
     ThreadPool pool(state.range(0));
-    for(int i=0;i<(int)1e3;i++){
+    for(int i=0;i<(int)1e2;i++){
       pool.submit(g);
     }
   }

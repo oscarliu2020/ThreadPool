@@ -7,7 +7,7 @@ all: bench
 bench: bench.o
 	$(CC) bench.o  -o bench -std=$(std) $(flags) $(lib)
 bench.o: bench.cpp
-	$(CC) -c bench.cpp -std=$(std) $(flags) $(inc) -flto
+	$(CC) -c bench.cpp -std=$(std) $(flags) $(inc) -o bench.o
 .PHONY: clean
 clean:
 	rm bench bench.o 

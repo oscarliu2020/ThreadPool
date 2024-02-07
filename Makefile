@@ -1,7 +1,7 @@
 CC=g++
 std=c++20
 flags=-I "benchmark/include" -L "benchmark/build/src" -lbenchmark -lpthread -O3
-all: benchmark1 benchmark.o lib ThreadPool.a ThreadPool.o
+all: benchmark1 benchmark.o lib libThreadPool.a ThreadPool.o
 benchmark1: benchmark.o
 	$(CC) benchmark.o libThreadPool.a -o benchmark1
 benchmark.o: 

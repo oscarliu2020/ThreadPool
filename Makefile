@@ -1,6 +1,6 @@
 CC=clang++
 std=c++20
-flags=  -O3 -Wno-unqualified-std-cast-call
+flags=  -O3
 inc= -I "./"
 lib= -L "./" -lbenchmark  -pthread 
 all: bench 

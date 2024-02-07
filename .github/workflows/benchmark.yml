@@ -5,11 +5,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Clang
-      uses: egor-tensin/setup-clang@v1
-      with:
-       version: latest
-       platform: x64
+    - name: Download google benchmark
+      run: git clone https://github.com/google/benchmark.git
+    - name: Build google benchmark
+      run: |
+            cd benchmark
+            cmake -E make_directory "build"
+            cmake -E chdir "build" cmake -DBENCHMARK_DOWNLOAD_DEPENDENCIES=on -DCMAKE_BUILD_TYPE=Release ../
+            cmake --build "build" --config Release
+            cmake -E chdir "build" ctest --build-config Release
+            cd ..
     - name: Checkout
       uses: actions/checkout@v2
     - name: Make

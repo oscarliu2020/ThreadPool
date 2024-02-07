@@ -42,7 +42,7 @@ ThreadPool::ThreadPool(int max_workers) : stop(false)
             lk.unlock();
             run();
         } });
-        workers.emplace_back(move(worker));
+        workers.emplace_back(std::move(worker));
     }
 }
 template <class F, class... Args>

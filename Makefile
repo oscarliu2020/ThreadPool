@@ -1,6 +1,6 @@
 CC=g++
 std=c++20
-flags=  -O3
+flags=  -O0
 inc= -I "./benchmark/include/"
 lib= -L "./benchmark/build/src/" -lbenchmark  -pthread 
 all: bench 

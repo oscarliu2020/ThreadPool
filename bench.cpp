@@ -1,15 +1,12 @@
 #include<benchmark/benchmark.h>
 #include"ThreadPool.hpp"
+#include<chrono>
 //CPU Bound
 void f(int x){
   int t=0;
   benchmark::DoNotOptimize(t);
-  for(int i=0;i<10000;i++)
-    for(int j=0;j<100;j++)
-      {
-        ++x;
-        benchmark::ClobberMemory();
-      }
+  std::chrono::time_point<std::chrono::system_clock> start=std::chrono::system_clock::now();
+  while(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now()-start).count()<1000);
 }
 //IO Bound
 void g(){
@@ -18,7 +15,7 @@ void g(){
 void thread_cpu(benchmark::State& state){
   for(auto _:state){
     ThreadPool pool(state.range(0));
-    for(int i=0;i<(int)1e3;i++){
+    for(int i=0;i<(int)1e2;i++){
       pool.submit(f,i);
     }
   }

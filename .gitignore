@@ -1,7 +1,6 @@
 *.csv
 .DS_Store/
 .vscode/
-benchmark
 main
 main.cpp
 main.o

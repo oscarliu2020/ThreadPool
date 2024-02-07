@@ -5,6 +5,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Download google benchmark
       run: git clone https://github.com/google/benchmark.git
     - name: Build google benchmark
@@ -15,8 +17,6 @@ jobs:
             cmake --build "build" --config Release
             cmake -E chdir "build" ctest --build-config Release
             cd ..
-    - name: Checkout
-      uses: actions/checkout@v2
     - name: Make
       run: make
     - name: Run benchmark

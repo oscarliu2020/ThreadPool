@@ -1,0 +1,33 @@
+2023-03-31T13:43:35+08:00
+Running ./benchmark
+Run on (12 X 2200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+Load Average: 0.24, 0.49, 0.37
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"thread_io/1",1,100.02,0.000294605,s,,,,,
+"thread_io/2",1,50.0112,0.000695121,s,,,,,
+"thread_io/3",1,34.0076,0.000939555,s,,,,,
+"thread_io/4",1,25.0053,0.000859836,s,,,,,
+"thread_io/5",1,20.0041,0.000904543,s,,,,,
+"thread_io/6",1,17.0038,0.000992838,s,,,,,
+"thread_io/7",1,15.0034,0.000818108,s,,,,,
+"thread_io/8",1,13.0038,0.00129871,s,,,,,
+"thread_io/9",1,12.0042,0.00206415,s,,,,,
+"thread_io/10",1,10.0035,0.00156634,s,,,,,
+"thread_io/11",1,10.0041,0.00208584,s,,,,,
+"thread_io/12",1,9.0034,0.00170551,s,,,,,
+"thread_io/13",1,8.00395,0.00221141,s,,,,,
+"thread_io/14",1,8.00305,0.00120262,s,,,,,
+"thread_io/15",1,7.00404,0.00270591,s,,,,,
+"thread_io/16",1,7.00472,0.00368164,s,,,,,
+"thread_io/17",1,6.00421,0.00280727,s,,,,,
+"thread_io/18",1,6.00488,0.00355915,s,,,,,
+"thread_io/19",1,6.00401,0.00319255,s,,,,,
+"thread_io/20",1,5.00499,0.00379177,s,,,,,
+"thread_io_BigO",,7.3063e+08,176151,N,,,,,
+"thread_io_RMS",,1.46912,0.227127,,,,,,

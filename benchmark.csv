@@ -1,0 +1,55 @@
+2023-03-28T19:46:10+08:00
+Running ./main
+Run on (12 X 4100 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+Load Average: 0.16, 3.07, 4.32
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"thread_cpu/1",1,3084.23,1.65888,ms,,,,,
+"thread_cpu/2",10,1540.29,1.50436,ms,,,,,
+"thread_cpu/3",10,1027.08,1.53579,ms,,,,,
+"thread_cpu/4",10,774.845,1.56582,ms,,,,,
+"thread_cpu/5",10,628.184,1.63115,ms,,,,,
+"thread_cpu/6",10,524.933,1.85773,ms,,,,,
+"thread_cpu/7",10,510.156,1.8588,ms,,,,,
+"thread_cpu/8",10,495.662,2.22319,ms,,,,,
+"thread_cpu/9",10,476.34,2.26446,ms,,,,,
+"thread_cpu/10",10,451.626,2.35642,ms,,,,,
+"thread_cpu/11",10,436.351,2.27169,ms,,,,,
+"thread_cpu/12",10,423.315,2.48357,ms,,,,,
+"thread_cpu/13",10,425.509,2.68996,ms,,,,,
+"thread_cpu/14",10,425.862,2.8598,ms,,,,,
+"thread_cpu/15",10,427.098,2.87653,ms,,,,,
+"thread_cpu/16",10,425.192,2.92737,ms,,,,,
+"thread_cpu/17",10,426.621,3.03068,ms,,,,,
+"thread_cpu/18",10,425.501,3.11931,ms,,,,,
+"thread_cpu/19",10,425.809,3.079,ms,,,,,
+"thread_cpu/20",10,427.49,3.25814,ms,,,,,
+"thread_cpu_BigO",,1.42162e+08,732035,lgN,,,,,
+"thread_cpu_RMS",,1.15511,0.181913,,,,,,
+"thread_io/1",1,3.07319,0.00149034,s,,,,,
+"thread_io/2",10,1.53873,0.00151787,s,,,,,
+"thread_io/3",10,1.0283,0.00153232,s,,,,,
+"thread_io/4",10,0.773662,0.00156611,s,,,,,
+"thread_io/5",10,0.623518,0.00162487,s,,,,,
+"thread_io/6",10,0.525421,0.00175891,s,,,,,
+"thread_io/7",10,0.508213,0.00197475,s,,,,,
+"thread_io/8",10,0.493404,0.00193822,s,,,,,
+"thread_io/9",10,0.473883,0.00206394,s,,,,,
+"thread_io/10",10,0.453941,0.00235704,s,,,,,
+"thread_io/11",10,0.435542,0.00245585,s,,,,,
+"thread_io/12",10,0.424805,0.00250691,s,,,,,
+"thread_io/13",10,0.424798,0.00263961,s,,,,,
+"thread_io/14",10,0.430005,0.00284679,s,,,,,
+"thread_io/15",10,0.425728,0.00291754,s,,,,,
+"thread_io/16",10,0.427728,0.00291707,s,,,,,
+"thread_io/17",10,0.425121,0.00302501,s,,,,,
+"thread_io/18",10,0.427879,0.00308195,s,,,,,
+"thread_io/19",10,0.42546,0.00315353,s,,,,,
+"thread_io/20",10,0.426081,0.00328511,s,,,,,
+"thread_io_BigO",,1.42128e+08,729372,lgN,,,,,
+"thread_io_RMS",,1.15303,0.171577,,,,,,

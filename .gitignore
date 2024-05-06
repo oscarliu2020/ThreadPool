@@ -1,0 +1,9 @@
+*.csv
+.DS_Store/
+.vscode/
+main
+main.cpp
+main.o
+ThreadPool.cpp
+
+
